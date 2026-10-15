@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Chivo', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --color-paddock-bg: #0d0e12;
+    --color-paddock-surface: #121317;
+    --color-paddock-card: #1a1b20;
+    --color-paddock-border: #343439;
+    --color-paddock-white: #e3e2e7;
+    --color-paddock-muted: #8b8d98;
+    --color-paddock-red: #e10600;
+    --color-paddock-green: #00e676;
+    --color-paddock-yellow: #ffd600;
+}
