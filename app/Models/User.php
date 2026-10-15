@@ -25,6 +25,9 @@ class User extends Authenticatable
         'password',
         'bio',
         'city',
+        'country',
+        'favorite_drivers',
+        'avatar_path',
     ];
 
     /**
@@ -47,6 +50,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'favorite_drivers' => 'array',
         ];
     }
 }

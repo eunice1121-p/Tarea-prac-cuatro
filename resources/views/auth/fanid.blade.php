@@ -34,7 +34,7 @@
             </p>
         </div>
 
-        <form class="mt-4 space-y-3" method="POST" action="{{ url('/fanid') }}">
+        <form class="mt-4 space-y-3" method="POST" action="{{ route('fanid.store') }}">
             @csrf
 
             <section class="rounded-xl border border-paddock-border/60 bg-paddock-card p-3.5">
@@ -71,6 +71,15 @@
                         label="Contraseña"
                         type="password"
                         placeholder="Mínimo 8 caracteres"
+                        autocomplete="new-password"
+                        icon="lock"
+                    />
+
+                    <x-auth.input-field
+                        name="password_confirmation"
+                        label="Confirmar contraseña"
+                        type="password"
+                        placeholder="Repite tu contraseña"
                         autocomplete="new-password"
                         icon="lock"
                     />
@@ -113,22 +122,22 @@
                 </p>
 
                 <div class="grid grid-cols-2 gap-x-2 gap-y-2.5">
-                    <x-auth.checkbox-field name="favorite_drivers[]" value="Max Verstappen" error-key="favorite_drivers" :show-error="false">
+                    <x-auth.checkbox-field name="favorite_drivers[]" value="Max Verstappen" error-key="favorite_drivers.0" :checked="true">
                         <span class="font-mono text-[9px] font-bold text-paddock-green">#1</span> Max Verstappen
                     </x-auth.checkbox-field>
-                    <x-auth.checkbox-field name="favorite_drivers[]" value="Franco Colapinto" error-key="favorite_drivers" :show-error="false">
+                    <x-auth.checkbox-field name="favorite_drivers[]" value="Franco Colapinto" error-key="favorite_drivers.1">
                         <span class="font-mono text-[9px] font-bold text-paddock-green">#43</span> Franco Colapinto
                     </x-auth.checkbox-field>
-                    <x-auth.checkbox-field name="favorite_drivers[]" value="Sergio Pérez" error-key="favorite_drivers" :show-error="false">
+                    <x-auth.checkbox-field name="favorite_drivers[]" value="Sergio Pérez" error-key="favorite_drivers.2">
                         <span class="font-mono text-[9px] font-bold text-paddock-yellow">#11</span> Sergio Pérez
                     </x-auth.checkbox-field>
-                    <x-auth.checkbox-field name="favorite_drivers[]" value="Fernando Alonso" error-key="favorite_drivers" :show-error="false">
+                    <x-auth.checkbox-field name="favorite_drivers[]" value="Fernando Alonso" error-key="favorite_drivers.3">
                         <span class="font-mono text-[9px] font-bold text-paddock-green">#14</span> Fernando Alonso
                     </x-auth.checkbox-field>
-                    <x-auth.checkbox-field name="favorite_drivers[]" value="Charles Leclerc" error-key="favorite_drivers" :show-error="false">
+                    <x-auth.checkbox-field name="favorite_drivers[]" value="Charles Leclerc" error-key="favorite_drivers.4">
                         <span class="font-mono text-[9px] font-bold text-[#ff776f]">#16</span> Charles Leclerc
                     </x-auth.checkbox-field>
-                    <x-auth.checkbox-field name="favorite_drivers[]" value="Lando Norris" error-key="favorite_drivers" :show-error="false">
+                    <x-auth.checkbox-field name="favorite_drivers[]" value="Lando Norris" error-key="favorite_drivers.5">
                         <span class="font-mono text-[9px] font-bold text-paddock-yellow">#4</span> Lando Norris
                     </x-auth.checkbox-field>
                 </div>
@@ -138,7 +147,7 @@
                 @enderror
             </fieldset>
 
-            <x-auth.checkbox-field name="terms" :required="true">
+            <x-auth.checkbox-field name="terms" error-key="terms">
                 Acepto los <span class="font-semibold text-paddock-green">Términos de Servicio</span> y deseo recibir notificaciones de Paddock LATAM sobre eventos, análisis y cobertura regional.
             </x-auth.checkbox-field>
 

@@ -103,7 +103,7 @@
 
         <p class="mt-6 text-center text-xs text-paddock-muted">
             ¿Aún no tienes cuenta?
-            <span aria-disabled="true" title="El registro aún no está configurado" class="font-semibold text-paddock-green">Regístrate en Paddock</span>
+            <a href="{{ route('fanid') }}" class="font-semibold text-paddock-green transition hover:text-white">Regístrate en Paddock</a>
         </p>
 
         <p class="mt-5 flex items-center justify-center gap-2 font-mono text-[8px] uppercase tracking-[0.16em] text-paddock-muted">
